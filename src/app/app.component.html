@@ -23,7 +23,12 @@
         </div>
       </ul>
       <p appBasicHighlight>Adding new style with basic directive!</p>
-      <p appBetterHighlight>Adding new style with better directive!</p>
+      <!--
+        You can remove the brackets and the single qoautes ONLY IF YOU ARE USING PROPERTY BINDING
+      -->
+      <p [appBetterHighlight]="'red'" defaultBColor="yellow"
+                            [defaultColor]="'black'" [highlightColor]="'white'"
+                            >Adding new style with better directive!</p>
     </div>
   </div>
 </div>
