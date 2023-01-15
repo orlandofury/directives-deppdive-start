@@ -1,3 +1,8 @@
 # Section 7 test project
 
-## ngFor and ngIf implemented
+[x] ngFor and ngIf Recap.
+[x] ngClass and ngStyle Recap.
+[x] Basic attribute directive.
+[x] Using the renderer to build better directive.
+[x] Using HostListener in Better directive.
+
