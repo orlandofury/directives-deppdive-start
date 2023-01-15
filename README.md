@@ -5,4 +5,7 @@
 [x] Basic attribute directive.
 [x] Using the renderer to build better directive.
 [x] Using HostListener in Better directive.
-
+[x] Using hostbinding to host properties
+[x] Binding directives properties
+[x] Building structural directives
+[x] Understanding ngSwitch
