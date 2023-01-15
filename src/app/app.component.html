@@ -9,14 +9,37 @@
         <div *ngIf="onlyOdd">
           <li class="list-group-item"
               [ngClass]="{odd: odd % 2 !== 0}"
-              [ngStyle]="{backgroundColor: odd % 2 !== 0 ? 'orange':'transparent'}"
+              [ngStyle]="{backgroundColor: odd % 2 !== 0 ? 'yellow':'transparent'}"
               *ngFor="let odd of oddNumbers">
             {{ odd }}
           </li>
         </div>
-        <div *ngIf="!onlyOdd">
+        <!-- <div *ngIf="!onlyOdd">
           <li class="list-group-item"
               [ngClass]="{even: even % 2 !== 0}"
+              [ngStyle]="{backgroundColor: even % 2 !== 0 ? 'yellow':'transparent'}"
+              *ngFor="let even of evenNumbers">
+            {{ even }}
+          </li>
+        </div> -->
+        <!--
+          inside ng-template we now can use again the usual property binding
+          this is the result of adding *ngIf
+        -->
+        <!-- <ng-template [ngIf]="!onlyOdd">
+          <div>
+            <li class="list-group-item"
+              [ngClass]="{even: even % 2 !== 0}"
+              [ngStyle]="{backgroundColor: even % 2 !== 0 ? 'yellow':'transparent'}"
+              *ngFor="let even of evenNumbers">
+            {{ even }}
+          </li>
+          </div>
+        </ng-template> -->
+        <div *appUnless="onlyOdd">
+          <li class="list-group-item"
+              [ngClass]="{even: even % 2 !== 0}"
+              [ngStyle]="{backgroundColor: even % 2 !== 0 ? 'yellow':'transparent'}"
               *ngFor="let even of evenNumbers">
             {{ even }}
           </li>
@@ -24,7 +47,8 @@
       </ul>
       <p appBasicHighlight>Adding new style with basic directive!</p>
       <!--
-        You can remove the brackets and the single qoautes ONLY IF YOU ARE USING PROPERTY BINDING
+        You can remove the brackets and the single qoautes 
+        ONLY IF YOU ARE USING PROPERTY BINDING
       -->
       <p [appBetterHighlight]="'red'" defaultBColor="yellow"
                             [defaultColor]="'black'" [highlightColor]="'white'"
